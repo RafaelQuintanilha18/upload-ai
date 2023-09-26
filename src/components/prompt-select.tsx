@@ -36,7 +36,7 @@ function handlePromptSelected(promptId:string) {
     <>
     <Select onValueChange={handlePromptSelected}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Selecione um prompt.."/>
+                  <SelectValue placeholder="Choose a prompt.."/>
                 </SelectTrigger>
                 <SelectContent>
                   {prompts?.map(prompt => {

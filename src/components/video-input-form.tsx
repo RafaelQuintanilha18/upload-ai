@@ -129,20 +129,20 @@ export function VideoInputForm(props: VideoInputFormProps) {
     ) : (
       <>
         <FileVideo />
-        Choose Your Video
+        Choose your video first
       </>
     )}
     </label>
     <input type="file" id="video" accept="video/mp4" className="sr-only" onChange={handleFileSelected}/>
     <Separator />
     <div className="space-y-2">
-      <Label htmlFor="transcription-prompt">Prompt de transcrição</Label>
+      <Label htmlFor="transcription-prompt">Transcription prompt</Label>
       <Textarea
         disabled={status !== 'waiting' }
         ref={promptInputRef}
         id="transcription-prompt"
         className="h-20 leading-relaxed resize-none"
-        placeholder="Inclua palavras-chave mencionadas no vídeo separadas por vírgula (,)"
+        placeholder="Add the keywords mentioned in the video separated by commas (,)"
       />
     </div>
     <Button

@@ -10,7 +10,6 @@ import { PromptSelect } from "./components/prompt-select";
 import { useState } from "react";
 import { useCompletion } from "ai/react";
 
-
 export function App() {
 
   const [temperature, setTemperature] = useState(0.5)
@@ -53,13 +52,13 @@ export function App() {
           <div className="grid grid-rows-2 gap-4 flex-1">
             <Textarea
             className="resize-none p-4 leading-relaxed"
-            placeholder="Inclua o prompt para IA..."
+            placeholder="Add your personalized AI prompt here, or choose one from the prompt options aside."
             value={input}
             onChange={handleInputChange}
             />
             <Textarea
             className="resize-none p-4 leading-relaxed"
-            placeholder="Resultado gerado pela IA.."
+            placeholder="The AI result will be displayed here.."
             readOnly
             value={completion}
             />
@@ -67,7 +66,7 @@ export function App() {
           </div>
 
           <p className="text-muted-foreground">
-            Lembre-se: você pode utilizar a variável <code className="text-violet-400">{'{transcript}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
+          Note: You can use the <code className="text-violet-400">{'{transcript}'}</code> variable in your prompt to add transcript content for the selected video.
           </p>
 
         </div>
@@ -86,7 +85,7 @@ export function App() {
 
 
             <div className="space-y-2">
-              <Label>Modelo</Label>
+              <Label>Model</Label>
               <Select disabled defaultValue="gpt3.5">
                 <SelectTrigger>
                   <SelectValue />
@@ -96,14 +95,14 @@ export function App() {
                 </SelectContent>
               </Select>
               <span className="text-xs text-muted-foreground italic block">
-                Você poderá customizar essa opção em breve
+               You will be able to customize this option soon
               </span>
             </div>
 
             <Separator />
 
             <div className="space-y-4">
-              <Label>Temperatura</Label>
+              <Label>Temperature</Label>
               <Slider
                 min={0}
                 max={1}
@@ -112,14 +111,14 @@ export function App() {
                 onValueChange={value => setTemperature(value[0])}
               />
               <span className="text-xs text-muted-foreground italic block leading-relaxed">
-                Valores mais altos tendem a deixar o resultado mais criativo e com possíveis erros.
+                Higher values tend to make the result more creative but also more susceptible to errors.
               </span>
             </div>
 
             <Separator />
 
             <Button disabled={isLoading} type="submit" className="w-full">
-              Executar <Wand2 className="w-4 h-4 ml-2" />
+              START NOW <Wand2 className="w-4 h-4 ml-2" />
             </Button>
           </form>
         </aside>

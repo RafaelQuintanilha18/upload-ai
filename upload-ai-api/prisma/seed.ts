@@ -55,6 +55,21 @@ Transcription:
 '''`.trim()
     }
   })
+
+  await prisma.prompt.create({
+    data: {
+      title: 'Video Summary',
+      template: `Your role is to generate a concise summary from the video uploaded.
+
+Below, you will receive a transcription of this video; use this transcription to generate the summary.
+
+The summary should be well explained, needs to contain all the key points from the video and be easy to understand.
+
+'''
+{transcription}
+'''`.trim()
+    }
+  })
 }
 
 main()

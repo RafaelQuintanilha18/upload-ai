@@ -41,8 +41,11 @@ export function App() {
           <span className="text-sm text-muted-foreground">Developed with 💜 at NLW</span>
           <Separator orientation="vertical" className="h-6" />
           <Button variant="secondary">
-            <Github className="w-4 h-4 mr-2" />
-            Github</Button>
+            <a href="https://github.com/RafaelQuintanilha18/upload-ai" target="_blank" className="flex"a>
+              <Github className="w-4 h-4 mr-2"/>
+               Github
+            </a>
+          </Button>
         </div>
       </div>
 

@@ -6,6 +6,8 @@ import { createTranscriptionRoute } from "./routes/create-transcription";
 import { generateAICompletionRoute } from "./routes/generate-ai-completion";
 
 const app = fastify()
+const port = process.env.PORT || 3333;
+
 
 app.register(fastifyCors, {
   origin: '*',
@@ -17,8 +19,12 @@ app.register(createTranscriptionRoute)
 app.register(generateAICompletionRoute)
 
 
-app.listen({
+/* app.listen({
   port: 3333,
 }).then(() => {
   console.log('HTTP Server Running!')
-})
+}) */
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`)
+});

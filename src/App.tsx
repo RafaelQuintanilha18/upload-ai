@@ -82,10 +82,8 @@ export function App() {
           <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
               <Label>Prompt</Label>
-              <PromptSelect onPromptSelected={setInput} />
-
+              <PromptSelect onPromptSelected={setInput}/>
             </div>
-
 
             <div className="space-y-2">
               <Label>Model</Label>
@@ -120,8 +118,11 @@ export function App() {
 
             <Separator />
 
-            <Button disabled={isLoading} type="submit" className="w-full">
-              START NOW <Wand2 className="w-4 h-4 ml-2" />
+            <Button
+              disabled={isLoading}
+              type="submit"
+              className="w-full">
+                START NOW <Wand2 className="w-4 h-4 ml-2" />
             </Button>
           </form>
         </aside>

@@ -14,7 +14,7 @@ const statusMessages = {
   converting: 'Converting video..',
   generating: 'Transcribing..',
   uploading: 'Uploading..',
-  success: 'Success! ⭐',
+  success: '✨Success✨ Now choose a prompt.',
 }
 
 interface VideoInputFormProps {
@@ -142,14 +142,14 @@ export function VideoInputForm(props: VideoInputFormProps) {
         ref={promptInputRef}
         id="transcription-prompt"
         className="h-20 leading-relaxed resize-none"
-        placeholder="Add the keywords mentioned in the video separated by commas (,)"
+        placeholder="Add any keywords mentioned in your video separated by commas (,)"
       />
     </div>
     <Button
       data-success={status === 'success'}
       disabled={status !== 'waiting'}
       type="submit"
-      className="w-full data-[success=true]:bg-emerald-700"
+      className={`w-full ${previewURL && 'bg-green-600'} data-[success=true]:bg-emerald-700`}
     >
       {status === 'waiting'?
         (

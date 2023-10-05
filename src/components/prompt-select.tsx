@@ -30,7 +30,6 @@ function handlePromptSelected(promptId:string) {
   }
 
   props.onPromptSelected(selectedPrompt.template)
-
 }
   return (
     <>
